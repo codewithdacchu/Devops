@@ -43,7 +43,7 @@ public class TestApp {
     @Test
     void testLogin() throws Exception {
 
-        driver.get("http://localhost:9090");
+        driver.get("http://localhost:8080");
         Thread.sleep(1000);
 
         driver.findElement(By.id("user")).sendKeys("admin");
@@ -58,7 +58,7 @@ public class TestApp {
     @Test
     void testAddTicket() throws Exception {
 
-        driver.get("http://localhost:9090");
+        driver.get("http://localhost:8080");
         Thread.sleep(1000);
 
         // Login
@@ -83,7 +83,7 @@ public class TestApp {
     @Test
     void testViewTickets() throws Exception {
 
-        driver.get("http://localhost:9090");
+        driver.get("http://localhost:8080");
         Thread.sleep(1000);
 
         // Login
