@@ -17,17 +17,18 @@ public class TestApp {
     @BeforeAll
     void setup() {
 
+        // Automatically downloads matching ChromeDriver
         WebDriverManager.chromedriver().setup();
 
         ChromeOptions options = new ChromeOptions();
 
-        // ✅ REQUIRED for Jenkins (no GUI)
+        // ✅ REQUIRED for Jenkins (headless execution)
         options.addArguments("--headless=new");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
 
-        // ✅ Required for Ubuntu snap Chromium
-        options.setBinary("/usr/bin/chromium-browser");
+        // Optional (safe fallback if needed)
+        options.addArguments("--remote-allow-origins=*");
 
         driver = new ChromeDriver(options);
     }
