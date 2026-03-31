@@ -18,7 +18,7 @@ public class TestApp {
     void setup() {
 
         // Automatically downloads matching ChromeDriver
-        WebDriverManager.chromedriver().setup();
+        WebDriverManager.chromedriver().browserVersion("145").setup();
 
         ChromeOptions options = new ChromeOptions();
 
